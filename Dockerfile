@@ -5,16 +5,16 @@ FROM node:14
 WORKDIR /usr/src/app
 
 # Copy the package.json and package-lock.json files
-COPY app/package*.json ./
+COPY app.js ./
 
 # Install application dependencies
 RUN npm install
 
 # Copy the rest of the application code
-COPY app/ .
+COPY test.js/ .
 
-# Expose port 3000
-EXPOSE 3000
+# Expose port 8000
+EXPOSE 8000
 
 # Command to run the application
 CMD [ "node", "app.js" ]
